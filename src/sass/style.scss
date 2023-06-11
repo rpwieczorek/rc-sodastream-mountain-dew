@@ -204,67 +204,60 @@ body {
   }
 
   .es-slider {
-    background-color: #fea245;
     margin: 64px 0 0;
     padding-bottom: 64px;
     &__title {
       @include text;
+      padding: 15px 0;
       text-align: center;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      line-height: 0.1;
-      padding: 60px 16px 0 40px;
+      font-family: $bold;
+      text-transform: uppercase;
+    }
+    &__text {
+      @include text;
+      text-align: center;
+      font-family: $light;
+      font-size: 24px;
+      font-weight: 300;
     }
     &__wrapper {
-      padding: 56px 16px 0 16px;
+      padding: 0 16px;
     }
     &__content {
-      max-width: 650px;
-      padding: 16px 24px;
-      // margin: 0 auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.1);
-    }
-    &__persona {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: flex-end;
+      max-width: 100%;
+      padding: 16px 28px;
+      position: relative;
     }
     &__img {
       @include img;
     }
-    &__imgMoved {
-      position: relative;
-    }
-    &__podpis {
-      @include text;
-      text-align: center;
-      font-size: 12px;
-      padding-top: 18px;
-    }
-    &__photo {
-      margin-bottom: 16px;
-    }
-    &__content {
-      position: relative;
-    }
     &__slide {
-      padding-left: 32px;
-      padding-top: 15px;
       position: relative;
+    }
+    &__icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 10px 10px;
+      &--img {
+        @include img;
+        max-width: 120px;
+      }
+      &--title {
+        @include text;
+        padding: 10px 0;
+        text-align: center;
+        font-family: $bold;
+        font-size: 18px;
+      }
     }
     &__number {
       @include text;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      font-size: 145px;
-      font-weight: 700;
-      color: #fea245;
-      opacity: 0.34;
-      line-height: 1;
+      font-family: $black;
+      font-size: 40px;
+      text-align: center;
     }
     .swiper-button-prev:after,
     .swiper-container-rtl .swiper-button-next:after {
@@ -276,43 +269,77 @@ body {
     }
     .swiper-button-next,
     .swiper-container-rtl .swiper-button-prev {
-      right: 31%;
-      top: auto !important;
-      bottom: -44px !important;
+      right: -1%;
     }
     .swiper-button-prev,
     .swiper-container-rtl .swiper-button-next {
-      left: 31%;
-      top: auto !important;
-      bottom: -44px !important;
+      left: -1%;
     }
-    .swiper-container-horizontal > .swiper-pagination-bullets,
-    .swiper-pagination-custom,
-    .swiper-pagination-fraction {
-      bottom: 0px;
-    }
-    .swiper-pagination {
-      position: absolute;
-      bottom: -32px;
-      left: 50%;
-      transform: translateX(-50%);
+  }
+
+  .es-your {
+    background: linear-gradient(transparent 0%, transparent 50%, #e5dcd3 50%, #e5dcd3 100%);
+    &__title {
+      @include text;
+      font-size: 28px;
+      font-family: $bold;
       text-align: center;
     }
-    .swiper-pagination-bullet {
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      border-radius: 50%;
-      background: #fff;
-      border: 1px solid $black;
-      opacity: 1;
-      &:not(:last-child) {
-        margin-right: 6px;
-      }
+    &__img {
+      @include img;
+      padding: 30px 15px 15px;
     }
-    .swiper-pagination-bullet-active {
-      opacity: 1;
-      background: $black;
+    &__text {
+      @include text;
+      font-size: 16px;
+      font-family: $light;
+      text-align: center;
+      padding: 0 15px 30px;
+    }
+  }
+  .es-video {
+    margin: 0 auto 64px;
+    width: 80%;
+    position: relative;
+    &__title {
+      @include text;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 700;
+      font-family: $bold;
+      text-align: center;
+      margin-bottom: 32px;
+      margin-top: 32px;
+      padding: 0 16px;
+    }
+    &__subtitle {
+      @include text;
+      font-size: 40px;
+      font-weight: 700;
+      font-family: $black;
+      text-align: center;
+      margin-bottom: 32px;
+      margin-top: 32px;
+    }
+    &__container {
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    &__iframe {
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    &__img {
+      @include img;
+      max-width: 200px;
     }
   }
 
@@ -322,10 +349,18 @@ body {
         flex-wrap: nowrap;
       }
     }
+    .es-video {
+      &__subtitle {
+        font-size: 50px;
+      }
+      &__img {
+        max-width: 300px;
+      }
+    }
   }
   @media screen and (min-width: 768px) {
     .es-kv {
-      min-height: 430px;
+      min-height: 490px;
       &__logo {
         position: relative;
         margin: 0 20px;
@@ -338,12 +373,13 @@ body {
         top: 40%;
         padding: 15px;
         text-align: left;
-        font-size: 40px;
+        font-size: 35px;
       }
       &__packshot {
         position: absolute;
         right: 0;
-        max-width: 40%;
+        top: 30px;
+        width: 350px;
         &--photo {
           @include img;
           padding: 0;
@@ -353,57 +389,116 @@ body {
       }
       &__bgtitle {
         position: absolute;
-        top: -50px;
-        left: -35%;
+        top: 5px;
+        left: -20%;
         padding: 15px;
-        font-size: 180px;
+        font-size: 150px;
         font-weight: 900;
         color: #e5dcd3;
       }
+      &__text {
+        width: 500px;
+        position: absolute;
+        left: 20px;
+        top: 70%;
+        text-align: left;
+        font-size: 15px;
+      }
     }
     .es-slider {
-      background: url("../images/slider.png");
-      background-repeat: no-repeat;
-      background-position: 125%;
-      background-size: contain;
-      background-color: #fea245;
-      &__title {
-        text-align: left;
-        padding: 60px 16px 0 150px;
-      }
       &__content {
         display: flex;
         flex-flow: row-reverse;
         padding: 32px;
       }
-      &__persona {
-        min-width: 136px;
-        margin-left: 32px;
-      }
-      &__imgMoved {
-        position: absolute;
-        top:-40px;
-        right: -20px;
-      }
-      &__job {
-        margin-bottom: 0;
-      }
       .swiper-button-next,
       .swiper-container-rtl .swiper-button-prev {
-        right: 37%;
+        right: -1%;
       }
       .swiper-button-prev,
       .swiper-container-rtl .swiper-button-next {
-        left: 37%;
+        left: -1%;
+      }
+    }
+    .es-video {
+      &__subtitle {
+        font-size: 60px;
       }
     }
   }
-  @media screen and (min-width: 860px) {
-
-  }
   @media screen and (min-width: 998px) {
-
-
+    .es-kv {
+      min-height: 620px;
+      &__logo {
+        position: relative;
+        margin: 0;
+        padding: 15px 0;
+        max-width: 50%;
+      }
+      &__title {
+        position: absolute;
+        left: 40px;
+        top: 40%;
+        padding: 15px;
+        text-align: left;
+        font-size: 50px;
+      }
+      &__packshot {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        width: 450px;
+        &--photo {
+          @include img;
+          padding: 0;
+          position: relative;
+          z-index: 1;
+        }
+      }
+      &__bgtitle {
+        position: absolute;
+        top: 5px;
+        left: -20%;
+        padding: 15px;
+        font-size: 200px;
+        font-weight: 900;
+        color: #e5dcd3;
+      }
+      &__text {
+        width: 650px;
+        position: absolute;
+        left: 40px;
+        top: 75%;
+        text-align: left;
+        font-size: 15px;
+      }
+    }
+    .es-posibilities {
+      &__title {
+        font-size: 36px;
+      }
+    }
+    .es-info {
+      &__title {
+        font-size: 36px;
+      }
+      &__text {
+        font-size: 20px;
+      }
+    }
+    .es-your {
+      &__title {
+        font-size: 36px;
+      }
+      &__text {
+        font-size: 20px;
+      }
+    }
+    .es-video {
+      &__title {
+        font-size: 36px;
+      }
+    }
   }
 }
 
