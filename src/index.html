@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>L'Oréal</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    >
+    <link rel="stylesheet" href="./css/style.css" >
+  </head>
+  <body>
+    <div class="es-sodastream" id="es-sodastream">
+      <section class="es-kv">
+        <div class="es-kv__logo">
+          <img src="images/logo.png" alt="" class="es-kv__img" >
+        </div>
+        <h2 class="es-kv__title"></h2>
+      </section>
+
+      <div class="es-slider">
+        <h3 class="es-slider__title">
+          Porady dermatologa
+        </h3>
+        <div class="es-slider__wrapper">
+          <div class="es-slider__content">
+            <div class="es-slider__persona">
+              <div class="es-slider__photo">
+                <img src="images/persona.png" alt="" class="es-slider__imgMoved" >
+              </div>
+              <div class="es-slider__photo">
+                <img src="images/podpis.png" alt="" class="es-slider__img" >
+                <p class="es-slider__podpis"><strong>
+                  Dermatolog, Ekspert marki L’Oréal Paris</strong></p>
+              </div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="es-slider__slide">
+                    <div class="es-slider__number">1</div>
+                    <p class="es-slider__text">
+                      <strong>Czy kosmetyki z witaminą C można bezpiecznie stosować codziennie przez cały rok?</strong><br><br>
+                      Tak, witaminę C wręcz należy stosować codziennie przez cały rok, najlepiej rano, ponieważ walczy z wolnymi rodnikami powstającymi pod wpływem czynników środowiskowych, głównie promieniowania słonecznego. Nieprawdą jest, że witamina C stosowana latem powoduje przebarwienia. Wprost przeciwnie, redukuje je. Stosowana
+w ciągu dnia z kremem z SPF wzmacnia jego działanie i dodatkowo chroni naszą skórę.<br >
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="es-slider__slide">
+                    <div class="es-slider__number">2</div>
+                    <p class="es-slider__text">
+                      <strong>Czym wyróżnia się czysta forma witaminy C na tle pochodnych?</strong><br><br>
+                      Jako dermatolog w pielęgnacji najczęściej zalecam czystą formę witaminy C – działa ona zdecydowanie i szybko, silnie antyoksydacyjnie, zapewniając natychmiastowy efekt rozświetlenia. Ważne, żeby formuła kosmetyku była stabilna, ponieważ czysta postać witaminy C jest bardzo wrażliwa na światło i temperaturę. Kluczowe jest tutaj nieprzezroczyste opakowanie oraz potwierdzenie stabilności przez producenta.<br >
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="es-slider__slide">
+                    <div class="es-slider__number">3</div>
+                    <p class="es-slider__text">
+                      <strong>Jakie stężenie witaminy C jest najbardziej skuteczne?</strong><br><br>
+                      Im wyższe stężenie witaminy C tym silniejsze działanie antyoksydacyjne, rozświetlające, wyrównujące koloryt. Najskuteczniejsze jej stężenie to 10-30%.<br >
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="es-slider__slide">
+                    <div class="es-slider__number">4</div>
+                    <p class="es-slider__text">
+                      <strong>Dlaczego po użyciu serum z witaminą C powinno się zastosować krem z filtrem?</strong><br><br>
+                      Wysoki SPF wzmacnia działanie ochronne witaminy C. Należy go stosować po nałożeniu preparatu z witaminą C codziennie przez cały rok. To idealna poranna rutyna.<br >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev">
+              <div class="es-slider__arrow">
+                <img
+                  src="images/arrow-left.png"
+                  alt=""
+                  class="es-slider__img"
+                >
+              </div>
+            </div>
+            <div class="swiper-button-next">
+              <div class="es-slider__arrow">
+                <img
+                  src="images/arrow-right.png"
+                  alt=""
+                  class="es-slider__img"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <script src="./js/slider.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoHeight: false,
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      })
+    </script>
+  </body>
+</html>
